@@ -1,0 +1,525 @@
+$date
+	Mon Dec  1 20:01:13 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_brent_kung_5bit $end
+$var wire 5 ! sum_out [4:0] $end
+$var wire 1 " cout_out $end
+$var reg 5 # a_d1 [4:0] $end
+$var reg 5 $ a_d2 [4:0] $end
+$var reg 5 % a_in [4:0] $end
+$var reg 5 & b_d1 [4:0] $end
+$var reg 5 ' b_d2 [4:0] $end
+$var reg 5 ( b_in [4:0] $end
+$var reg 1 ) clk $end
+$scope module uut $end
+$var wire 1 * C2 $end
+$var wire 1 + C3 $end
+$var wire 1 , C4 $end
+$var wire 1 - C5 $end
+$var wire 5 . G [4:0] $end
+$var wire 5 / P [4:0] $end
+$var wire 5 0 a_in [4:0] $end
+$var wire 5 1 b_in [4:0] $end
+$var wire 1 ) clk $end
+$var wire 5 2 sum_out [4:0] $end
+$var wire 5 3 sum [4:0] $end
+$var wire 1 4 p43 $end
+$var wire 1 5 p32 $end
+$var wire 1 6 p31 $end
+$var wire 1 7 p22 $end
+$var wire 1 8 p11 $end
+$var wire 1 9 g43 $end
+$var wire 1 : g32 $end
+$var wire 1 ; g31 $end
+$var wire 1 < g22 $end
+$var wire 1 = g11 $end
+$var wire 1 " cout_out $end
+$var wire 5 > b [4:0] $end
+$var wire 5 ? a [4:0] $end
+$var wire 1 @ C1 $end
+$scope module L1_10 $end
+$var wire 1 A g_ji $end
+$var wire 1 = g_ki $end
+$var wire 1 B g_kj $end
+$var wire 1 C p_ji $end
+$var wire 1 8 p_ki $end
+$var wire 1 D p_kj $end
+$upscope $end
+$scope module L1_32 $end
+$var wire 1 E g_ji $end
+$var wire 1 ; g_ki $end
+$var wire 1 F g_kj $end
+$var wire 1 G p_ji $end
+$var wire 1 6 p_ki $end
+$var wire 1 H p_kj $end
+$upscope $end
+$scope module L2_210 $end
+$var wire 1 = g_ji $end
+$var wire 1 < g_ki $end
+$var wire 1 I g_kj $end
+$var wire 1 8 p_ji $end
+$var wire 1 7 p_ki $end
+$var wire 1 J p_kj $end
+$upscope $end
+$scope module L2_310 $end
+$var wire 1 = g_ji $end
+$var wire 1 : g_ki $end
+$var wire 1 ; g_kj $end
+$var wire 1 8 p_ji $end
+$var wire 1 5 p_ki $end
+$var wire 1 6 p_kj $end
+$upscope $end
+$scope module L3_40123 $end
+$var wire 1 : g_ji $end
+$var wire 1 9 g_ki $end
+$var wire 1 K g_kj $end
+$var wire 1 5 p_ji $end
+$var wire 1 4 p_ki $end
+$var wire 1 L p_kj $end
+$upscope $end
+$scope module da0 $end
+$var wire 1 ) clk $end
+$var wire 1 M d $end
+$var reg 1 N q $end
+$upscope $end
+$scope module da1 $end
+$var wire 1 ) clk $end
+$var wire 1 O d $end
+$var reg 1 P q $end
+$upscope $end
+$scope module da2 $end
+$var wire 1 ) clk $end
+$var wire 1 Q d $end
+$var reg 1 R q $end
+$upscope $end
+$scope module da3 $end
+$var wire 1 ) clk $end
+$var wire 1 S d $end
+$var reg 1 T q $end
+$upscope $end
+$scope module da4 $end
+$var wire 1 ) clk $end
+$var wire 1 U d $end
+$var reg 1 V q $end
+$upscope $end
+$scope module db0 $end
+$var wire 1 ) clk $end
+$var wire 1 W d $end
+$var reg 1 X q $end
+$upscope $end
+$scope module db1 $end
+$var wire 1 ) clk $end
+$var wire 1 Y d $end
+$var reg 1 Z q $end
+$upscope $end
+$scope module db2 $end
+$var wire 1 ) clk $end
+$var wire 1 [ d $end
+$var reg 1 \ q $end
+$upscope $end
+$scope module db3 $end
+$var wire 1 ) clk $end
+$var wire 1 ] d $end
+$var reg 1 ^ q $end
+$upscope $end
+$scope module db4 $end
+$var wire 1 ) clk $end
+$var wire 1 _ d $end
+$var reg 1 ` q $end
+$upscope $end
+$scope module dcout $end
+$var wire 1 ) clk $end
+$var wire 1 - d $end
+$var reg 1 " q $end
+$upscope $end
+$scope module ds0 $end
+$var wire 1 ) clk $end
+$var wire 1 a d $end
+$var reg 1 b q $end
+$upscope $end
+$scope module ds1 $end
+$var wire 1 ) clk $end
+$var wire 1 c d $end
+$var reg 1 d q $end
+$upscope $end
+$scope module ds2 $end
+$var wire 1 ) clk $end
+$var wire 1 e d $end
+$var reg 1 f q $end
+$upscope $end
+$scope module ds3 $end
+$var wire 1 ) clk $end
+$var wire 1 g d $end
+$var reg 1 h q $end
+$upscope $end
+$scope module ds4 $end
+$var wire 1 ) clk $end
+$var wire 1 i d $end
+$var reg 1 j q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+xj
+xi
+xh
+xg
+xf
+xe
+xd
+xc
+xb
+xa
+x`
+0_
+x^
+0]
+x\
+0[
+xZ
+1Y
+xX
+0W
+xV
+0U
+xT
+0S
+xR
+0Q
+xP
+0O
+xN
+1M
+xL
+xK
+xJ
+xI
+xH
+xG
+xF
+xE
+xD
+xC
+xB
+xA
+x@
+bx ?
+bx >
+x=
+x<
+x;
+x:
+x9
+x8
+x7
+x6
+x5
+x4
+bx 3
+bx 2
+b10 1
+b1 0
+bx /
+bx .
+x-
+x,
+x+
+x*
+0)
+b10 (
+bx '
+bx &
+b1 %
+bx $
+bx #
+x"
+bx !
+$end
+#5000
+0i
+0e
+0g
+0,
+0:
+05
+1c
+0*
+0=
+0;
+0+
+0<
+0-
+09
+18
+06
+07
+04
+1a
+0B
+0A
+0F
+0E
+0I
+0K
+0@
+1D
+1C
+0H
+0G
+0J
+0L
+b11 3
+b0 .
+b11 /
+1N
+0P
+0R
+0T
+b1 ?
+0V
+0X
+1Z
+0\
+0^
+b10 >
+0`
+b10 &
+b1 #
+1)
+#10000
+0)
+#15000
+b10 '
+b1 $
+0"
+0j
+0h
+0f
+1d
+b11 !
+b11 2
+1b
+1)
+#20000
+1W
+1Q
+0)
+b11 (
+b11 1
+b101 %
+b101 0
+#25000
+1g
+1+
+1<
+1*
+1=
+0c
+0e
+08
+07
+0a
+1A
+1@
+0C
+1G
+1J
+b1000 3
+b1 .
+b110 /
+b101 ?
+1R
+b11 >
+1X
+b11 &
+b101 #
+1)
+#30000
+0)
+#35000
+b11 '
+b101 $
+1h
+0d
+b1000 !
+b1000 2
+0b
+1)
+#40000
+0Y
+1O
+1S
+1U
+0)
+b1 (
+b1 1
+b11111 %
+b11111 0
+#45000
+1-
+19
+1,
+1:
+0g
+0i
+16
+b0 3
+1H
+1L
+b11110 /
+1P
+1T
+b11111 ?
+1V
+b1 >
+0Z
+b1 &
+b11111 #
+1)
+#50000
+0)
+#55000
+b1 '
+b11111 $
+1"
+b0 !
+b0 2
+0h
+1)
+#60000
+0W
+1Y
+1]
+0O
+0S
+0)
+b1010 (
+b1010 1
+b10101 %
+b10101 0
+#65000
+1g
+0-
+09
+1i
+0+
+0<
+0,
+0:
+1e
+14
+0*
+0=
+1c
+17
+15
+18
+1a
+0A
+0@
+1C
+b11111 3
+b0 .
+b11111 /
+0P
+b10101 ?
+0T
+0X
+1Z
+b1010 >
+1^
+b1010 &
+b10101 #
+1)
+#70000
+0)
+#75000
+b1010 '
+b10101 $
+0"
+1j
+1h
+1f
+1d
+b11111 !
+b11111 2
+1b
+1)
+#80000
+1W
+0Y
+1[
+0]
+1O
+1S
+0U
+0)
+b101 (
+b101 1
+b1111 %
+b1111 0
+#85000
+1,
+1:
+0g
+1*
+1=
+1;
+0c
+05
+1e
+1i
+1+
+1<
+08
+06
+07
+04
+0a
+1A
+1E
+1I
+1@
+0C
+0G
+0J
+0L
+b10100 3
+b101 .
+b1010 /
+1P
+1T
+b1111 ?
+0V
+1X
+0Z
+1\
+b101 >
+0^
+b101 &
+b1111 #
+1)
+#90000
+0)
+#95000
+b101 '
+b1111 $
+0h
+0d
+b10100 !
+b10100 2
+0b
+1)
+#100000
+0)

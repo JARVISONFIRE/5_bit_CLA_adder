@@ -1,0 +1,141 @@
+* =========================================================
+* CMOS XOR + DOMINO CLA - 180nm - Comparison Testbench
+* Save as: CMOS_XOR_domino_comparison.cir
+* =========================================================
+.include TSMC_180nm.txt
+.param SUPPLY = 1.8
+.param LAMBDA = 0.09u
+.param WN = {4*LAMBDA}
+.param WP = {8*LAMBDA}
+.global gnd
+
+* --- Supplies & Stimuli ---
+Vdd vdd 0 'SUPPLY'
+* Inputs (bits 2..0), staggered transitions for variety
+Va2 a2 0 PULSE(0 'SUPPLY' 25n 100p 100p 10n 20n)
+Vb2 b2 0 PULSE(0 'SUPPLY' 35n 100p 100p 20n 40n)
+Va1 a1 0 PULSE(0 'SUPPLY' 25n 100p 100p 5n 10n)
+Vb1 b1 0 PULSE(0 'SUPPLY' 30n 100p 100p 10n 20n)
+Va0 a0 0 PULSE(0 'SUPPLY' 25n 100p 100p 2.5n 5n)
+Vb0 b0 0 PULSE(0 'SUPPLY' 27.5n 100p 100p 5n 10n)
+Vcin c0 0 PULSE(0 'SUPPLY' 55n 100p 100p 10n 20n)
+
+* Clock: precharge when CLK=0, evaluate when CLK=1 (50% duty, 20ns period)
+Vclk clk 0 PULSE(0 'SUPPLY' 0 100p 100p 10n 20n)
+
+* --- Basic CMOS Inverter (buffer) ---
+.subckt CMOS_INV A Y vdd gnd
+Mpi Y A vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Mni Y A gnd gnd CMOSN W={WN} L={2*LAMBDA}
+.ends
+
+* --- Static CMOS XOR2 (non-domino) ---
+* Simple static CMOS XOR using basic static gates; produces full-swing output
+.subckt CMOS_XOR2 A B Y vdd gnd
+* Inverters
+Xia A ainv vdd gnd CMOS_INV
+Xib B binv vdd gnd CMOS_INV
+* ANDs: A & !B, !A & B (use NAND+INV style)
+* A & !B
+M1 t1 A binv 0 0 CMOSN W={WN} L={2*LAMBDA}
+M2 t1 A binv vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Xbuf1 t1 t1b vdd gnd CMOS_INV
+* !A & B
+M3 t2 binv B 0 0 CMOSN W={WN} L={2*LAMBDA}
+M4 t2 binv B vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Xbuf2 t2 t2b vdd gnd CMOS_INV
+* OR t1b, t2b -> final XOR (use NAND+INV)
+M5 tor t1b t2b 0 0 CMOSN W={WN} L={2*LAMBDA}
+M6 tor t1b t2b vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Xbuf_out tor Y vdd gnd CMOS_INV
+.ends
+
+* --- Domino CLA subckt (C3 from G2,P2,G1,P1,G0,P0,C0) ---
+.subckt DOMINO_C3_CLA G2 P2 G1 P1 G0 P0 C0 CLK Yout vdd gnd
+* footer node name = eval (connected to ground through footer NMOS when CLK=1)
+M_footer eval CLK 0 0 CMOSN W={WN} L={2*LAMBDA}
+* precharge PMOS (source=vdd, drain=dyn, gate=CLK) => ON when CLK=0 (precharge)
+M_pre dyn CLK vdd vdd CMOSP W={WP} L={2*LAMBDA}
+* weak keeper (small PMOS) to hold dyn when floating (driven by Yout)
+M_keeper dyn Yout vdd vdd CMOSP W={WN} L={2*LAMBDA}
+
+* Pull-down network (drain at dyn, sources toward eval)
+* Path 1: G2
+M_g2 dyn G2 eval eval CMOSN W={WN} L={2*LAMBDA}
+
+* Path 2: P2 * G1
+M_p2g1_1 dyn P2 n1 eval CMOSN W={WN*2} L={2*LAMBDA}
+M_p2g1_2 n1 G1 eval eval CMOSN W={WN*2} L={2*LAMBDA}
+
+* Path 3: P2 * P1 * G0
+M_p2p1g0_1 dyn P2 n2 eval CMOSN W={WN*3} L={2*LAMBDA}
+M_p2p1g0_2 n2 P1 n3 CMOSN W={WN*3} L={2*LAMBDA}
+M_p2p1g0_3 n3 G0 eval eval CMOSN W={WN*3} L={2*LAMBDA}
+
+* Path 4: P2 * P1 * P0 * C0
+M_p2p1p0c0_1 dyn P2 n4 eval CMOSN W={WN*4} L={2*LAMBDA}
+M_p2p1p0c0_2 n4 P1 n5 CMOSN W={WN*4} L={2*LAMBDA}
+M_p2p1p0c0_3 n5 P0 n6 CMOSN W={WN*4} L={2*LAMBDA}
+M_p2p1p0c0_4 n6 C0 eval eval CMOSN W={WN*4} L={2*LAMBDA}
+
+* Output buffer to full swing
+Xout_buf dyn Yout vdd gnd CMOS_INV
+
+* initial conditions to avoid floating problems
+.ic V(dyn)= 'SUPPLY'
+.ic V(n1)=0 V(n2)=0 V(n3)=0 V(n4)=0 V(n5)=0 V(n6)=0 V(eval)=0
+
+.ends
+
+* --- Instantiate P/G blocks (CMOS XOR for P, CMOS AND for G) ---
+Xp2 a2 b2 p2 vdd 0 CMOS_XOR2
+Xg2 a2 b2 g2 vdd 0 CMOS_AND2= ; we'll implement G as simple transistor AND using CMOS_INV+NAND/INV
+
+* Because CMOS_AND2 was not yet defined above in this file, define simple static AND:
+.subckt CMOS_AND2 A B Y vdd gnd
+* NAND then INV
+Mna intn A B 0 0 CMOSN W={WN*2} L={2*LAMBDA}
+Mpa intn A vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Mpb intn B vdd vdd CMOSP W={WP} L={2*LAMBDA}
+Xnand_inv intn Y vdd gnd CMOS_INV
+.ends
+
+* instantiate the rest
+Xp1 a1 b1 p1 vdd 0 CMOS_XOR2
+Xg1 a1 b1 g1 vdd 0 CMOS_AND2
+Xp0 a0 b0 p0 vdd 0 CMOS_XOR2
+Xg0 a0 b0 g0 vdd 0 CMOS_AND2
+
+* Domino CLA instance (same transistor sizing)
+Xc3 g2 p2 g1 p1 g0 p0 c0 clk c3_out vdd 0 DOMINO_C3_CLA
+
+* load
+Cload c3_out 0 10f
+
+* --- Measurements (fair comparison metrics) ---
+* Delay of c3_out (0.1->0.9)
+.meas tran t_rise TRIG v(c3_out) VAL='0.1*SUPPLY' RISE=1 TARG v(c3_out) VAL='0.9*SUPPLY' RISE=1
+.meas tran t_fall TRIG v(c3_out) VAL='0.9*SUPPLY' FALL=1 TARG v(c3_out) VAL='0.1*SUPPLY' FALL=1
+
+* Energy drawn from Vdd (integral of I(Vdd)*SUPPLY)
+.meas tran energy PARAM='SUPPLY*ABS(INTEG(I(Vdd) from=0 to=160e-9))'
+.meas tran avg_power PARAM='energy/160e-9'
+
+* Peak supply current
+.meas tran Ipeak MAX I(Vdd)
+
+.control
+set hcopypscolor=1
+tran 0.1n 160n uic
+run
+* plot signals for quick viewing
+plot v(clk) v(a2) v(b2) v(p2) v(g2) v(c3_out)
+* print measurements
+echo "t_rise = " $meas(t_rise)
+echo "t_fall = " $meas(t_fall)
+echo "energy = " $meas(energy)
+echo "avg_power = " $meas(avg_power)
+echo "Ipeak = " $meas(Ipeak)
+.endc
+
+.end

@@ -1,0 +1,20 @@
+.subckt NOR2 clk A B out vdd gnd width_N width_P LAMBDA
+
+
+M0  out  clk vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M1  out  A n1   gnd CMOSN W={width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M2  out  B n1 gnd CMOSN W={width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+M3  n1  clk gnd gnd CMOSN W={width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+.ends NOR2
