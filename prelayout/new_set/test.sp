@@ -1,72 +1,74 @@
-* ---------- SIMPLE DC-ONLY TRUTH TABLE TEST (isolates model issues) ----------
-* Do NOT include TSMC_180nm.txt for this run
+.include TSMC_180nm.txt
 
 .param SUPPLY=1.8
 .param LAMBDA=0.09u
-.param width_P = 4*LAMBDA
-.param width_N = 2*LAMBDA
+.param width_P = 20*LAMBDA*2.5
+.param width_N = 20*LAMBDA
 
 .global vdd gnd
 
-* single supply
 Vdd vdd gnd {SUPPLY}
 
-* ----------------- device models (simple) -----------------
-.model CMOSN NMOS (LEVEL=1 VTO=0.6 KP=50u)
-.model CMOSP PMOS (LEVEL=1 VTO=-0.6 KP=25u)
+Va P1 gnd PULSE(0 {SUPPLY} 0 100p 100p 40n 80n)
+Vb P2 gnd PULSE(0 {SUPPLY} 0 100p 100p 20n 40n)
 
-* ----------------- transistor/netlist (unchanged names) -----------------
-Mp0  A1 P1 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
-Mp1  A1 P2 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+.option scale=90n
 
-Mp2  A1 P1 A2 gnd CMOSN W={2*width_N} L={2*LAMBDA}
-Mp3  A2 P2 gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+* SPICE3 file created from AND.ext - technology: scmos
 
-Mpinv0  P_out A1 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
-Mpinv1  P_out A1 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
+.option scale=90n
 
-Mg0  B1 P1 vdd vdd CMOSP W={2*width_P} L={2*LAMBDA}
-Mg1  B1 G2 vdd vdd CMOSP W={2*width_P} L={2*LAMBDA}
-Mg2  B2 G1 B1 vdd CMOSP W={2*width_P} L={2*LAMBDA}
+M1000 vdd in out w_n29_25# CMOSP w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1001 vdd P2 in w_6_24# CMOSP w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1002 a_19_13# P1 in Gnd CMOSN w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1003 gnd P2 a_19_13# Gnd CMOSN w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1004 in P1 vdd w_6_24# CMOSP w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1005 gnd in out Gnd CMOSN w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+C0 in vdd 0.21756f
+C1 P1 in 0.19608f
+C2 P2 w_6_24# 0.02045f
+C3 out w_n29_25# 0.00935f
+C4 out vdd 0.11548f
+C5 P2 in 0.05757f
+C6 vdd w_n29_25# 0.03084f
+C7 P1 vdd 0.00169f
+C8 gnd in 0.08969f
+C9 gnd out 0.0825f
+C10 P2 vdd 0.02919f
+C11 a_19_13# in 0.09624f
+C12 P1 P2 0.07932f
+C13 P1 gnd 0.07512f
+C14 P2 gnd 0.05684f
+C15 w_6_24# in 0.00821f
+C16 gnd a_19_13# 0.07426f
+C17 w_6_24# vdd 0.01634f
+C18 in out 0.0591f
+C19 P1 w_6_24# 0.02119f
+C20 in w_n29_25# 0.02111f
+C21 a_19_13# 0 0  
+C22 gnd 0 0.24554f  
+C23 P2 0 0.12473f  
+C24 P1 0 0.1896f  
+C25 vdd 0 0.25038f  
+C26 out 0 0.07735f  
+C27 in 0 0.26098f  
+C28 w_6_24# 0 0.64282f  
+C29 w_n29_25# 0 0.57753f  
 
-Mg3  B2 G1 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
-Mg4  B2 P1 B3 gnd CMOSN W={2*width_N} L={2*LAMBDA}
-Mg5  B3 G2 gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
 
-Mginv0  G_out B2 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
-Mginv1  G_out B2 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
 
-C_outP P_out gnd 1f
-C_outG G_out gnd 1f
 
-* ---------- stabilize internal nodes (always useful) ----------
-R_A1 A1 gnd 1e9
-R_A2 A2 gnd 1e9
-R_B1 B1 gnd 1e9
-R_B2 B2 gnd 1e9
-R_B3 B3 gnd 1e9
-
-C_A1 A1 gnd 5f
-C_A2 A2 gnd 5f
-C_B1 B1 gnd 1f
-C_B2 B2 gnd 1f
-C_B3 B3 gnd 1f
-
-* ---------- DC drive sources (dedicated for DC sweep) ----------
-Va_dc P1 gnd DC 0
-Vb_dc P2 gnd DC 0
-Vc_dc G1 gnd DC 0
-Vd_dc G2 gnd DC 0
-
-* ---------- DC sweep over all 16 combos ----------
-.DC Va_dc 0 {SUPPLY} {SUPPLY} Vb_dc 0 {SUPPLY} {SUPPLY} Vc_dc 0 {SUPPLY} {SUPPLY} Vd_dc 0 {SUPPLY} {SUPPLY}
-.print DC V(P1) V(P2) V(G1) V(G2) V(P_out) V(G_out) V(A1) V(A2) V(B1) V(B2) V(B3)
-
-* solver options for robustness
-.options method=gear gmin=1e-12 reltol=1e-3 numdgt=6
+Cload NAND_Out gnd 10f
 
 .control
-  run
+tran 0.1n 80n
+plot v(P1)+4 v(P2)+2 v(out) title '2-Input AND – layout Verification'
 .endc
 
 .end
