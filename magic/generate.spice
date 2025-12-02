@@ -1,0 +1,28 @@
+* SPICE3 file created from generate.ext - technology: scmos
+
+.option scale=1u
+
+M1000 a_26_14# G2 gnd Gnd nfet w=4 l=2
++  ad=12p pd=10u as=12p ps=10u
+M1001 a_18_31# G1 a_11_14# w_5_27# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1002 a_11_14# P1 a_26_14# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1003 vdd G2 a_18_31# w_5_27# pfet w=8 l=2
++  ad=24p pd=14u as=24p ps=14u
+M1004 a_18_31# P1 vdd w_5_27# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1005 out a_11_14# gnd Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1006 gnd G1 a_11_14# Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1007 out a_11_14# vdd w_58_25# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+C0 w_5_27# a_18_31# 2.636f
+C1 gnd 0 15.98f **FLOATING
+C2 out 0 3.196f **FLOATING
+C3 vdd 0 12.972f **FLOATING
+C4 a_11_14# 0 18.098f **FLOATING
+C5 P1 0 11.616f **FLOATING
+C6 G2 0 10.138f **FLOATING
+C7 G1 0 9.95f **FLOATING

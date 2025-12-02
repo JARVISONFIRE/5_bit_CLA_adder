@@ -1,43 +1,28 @@
-.include TSMC_180nm.txt
-
-.param SUPPLY=1.8
-.param LAMBDA=0.09u
-.param width_P = 20*LAMBDA*2.5
-.param width_N = 20*LAMBDA
-
-.global vdd gnd
-
-Vdd vdd gnd {SUPPLY}
-
-Va D gnd PULSE(0 {SUPPLY} 0 100p 100p 35n 75n)
-*Vb G1 gnd PULSE(0 {SUPPLY} 0 100p 100p 20n 40n)
-Vc clk gnd PULSE(0 {SUPPLY} 0 100p 100p 10n 20n)
-
 * SPICE3 file created from DFF.ext - technology: scmos
 
 .option scale=90n
 
-M1000 out a_131_26# vdd w_156_21# CMOSP w=8 l=2
+M1000 out a_131_26# vdd w_156_21# pfet w=8 l=2
 +  ad=40p pd=26u as=40p ps=26u
-M1001 stage_2_out stage_1_out a_93_9# Gnd CMOSN w=4 l=2
+M1001 stage_2_out stage_1_out a_93_9# Gnd nfet w=4 l=2
 +  ad=20p pd=18u as=12p ps=10u
-M1002 a_131_9# stage_2_out gnd Gnd CMOSN w=4 l=2
+M1002 a_131_9# stage_2_out gnd Gnd nfet w=4 l=2
 +  ad=12p pd=10u as=20p ps=18u
-M1003 out a_131_26# gnd Gnd CMOSN w=4 l=2
+M1003 out a_131_26# gnd Gnd nfet w=4 l=2
 +  ad=20p pd=18u as=20p ps=18u
-M1004 a_50_26# D vdd w_37_20# CMOSP w=8 l=2
+M1004 a_50_26# D vdd w_37_20# pfet w=8 l=2
 +  ad=24p pd=14u as=40p ps=26u
-M1005 a_131_26# stage_2_out vdd w_118_20# CMOSP w=8 l=2
+M1005 a_131_26# stage_2_out vdd w_118_20# pfet w=8 l=2
 +  ad=40p pd=26u as=40p ps=26u
-M1006 a_93_9# clk gnd Gnd CMOSN w=4 l=2
+M1006 a_93_9# clk gnd Gnd nfet w=4 l=2
 +  ad=12p pd=10u as=20p ps=18u
-M1007 stage_2_out clk vdd w_80_20# CMOSP w=8 l=2
+M1007 stage_2_out clk vdd w_80_20# pfet w=8 l=2
 +  ad=40p pd=26u as=40p ps=26u
-M1008 stage_1_out D gnd Gnd CMOSN w=4 l=2
+M1008 stage_1_out D gnd Gnd nfet w=4 l=2
 +  ad=20p pd=18u as=20p ps=18u
-M1009 a_131_26# clk a_131_9# Gnd CMOSN w=4 l=2
+M1009 a_131_26# clk a_131_9# Gnd nfet w=4 l=2
 +  ad=20p pd=18u as=12p ps=10u
-M1010 stage_1_out clk a_50_26# w_37_20# CMOSP w=8 l=2
+M1010 stage_1_out clk a_50_26# w_37_20# pfet w=8 l=2
 +  ad=40p pd=26u as=24p ps=14u
 C0 gnd a_93_9# 0.07426f
 C1 w_37_20# D 0.02417f
@@ -80,29 +65,18 @@ C37 w_156_21# a_131_26# 0.02707f
 C38 w_118_20# vdd 0.00841f
 C39 w_156_21# vdd 0.03739f
 C40 clk stage_2_out 0.03022f
-C41 a_131_9# 0 0.0042f 
-C42 a_93_9# 0 0.00422f 
-C43 gnd 0 0.52109f 
-C44 out 0 0.07734f 
-C45 stage_1_out 0 0.66306f 
-C46 a_50_26# 0 0.00438f 
-C47 vdd 0 0.50064f 
-C48 a_131_26# 0 0.28752f 
-C49 stage_2_out 0 0.25774f 
-C50 clk 0 1.85008f 
-C51 D 0 0.14714f 
-C52 w_156_21# 0 0.57753f 
-C53 w_118_20# 0 0.48211f 
-C54 w_80_20# 0 0.48211f 
-C55 w_37_20# 0 0.64282f 
-
-
-
-Cload out gnd 10f
-
-.control
-tran 0.1n 80n
-plot v(clk)+4 v(D)+2 v(out) title '2-Input AND – layout Verification'
-.endc
-
-.end
+C41 a_131_9# 0 0.0042f **FLOATING
+C42 a_93_9# 0 0.00422f **FLOATING
+C43 gnd 0 0.52109f **FLOATING
+C44 out 0 0.07734f **FLOATING
+C45 stage_1_out 0 0.66306f **FLOATING
+C46 a_50_26# 0 0.00438f **FLOATING
+C47 vdd 0 0.50064f **FLOATING
+C48 a_131_26# 0 0.28752f **FLOATING
+C49 stage_2_out 0 0.25774f **FLOATING
+C50 clk 0 1.85008f **FLOATING
+C51 D 0 0.14714f **FLOATING
+C52 w_156_21# 0 0.57753f **FLOATING
+C53 w_118_20# 0 0.48211f **FLOATING
+C54 w_80_20# 0 0.48211f **FLOATING
+C55 w_37_20# 0 0.64282f **FLOATING
