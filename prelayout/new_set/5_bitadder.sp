@@ -88,17 +88,84 @@ X_s1 P2 G11 P2_bar G11_bar S2_bar S2 gnd width_N width_P LAMBDA XOR2
 X_s2 P3 G22 P3_bar G22_bar S3_bar S3 gnd width_N width_P LAMBDA XOR2
 X_s3 P4 G32 P4_bar G32_bar S4_bar S4 gnd width_N width_P LAMBDA XOR2
 
-C_out0 P0 gnd 1fF
-C_out1 S1 gnd 1fF
-C_out2 S2 gnd 1fF
-C_out3 S3 gnd 1fF
-C_out4 S4 gnd 1fF
+*.subckt DFF D clk Out Out_bar vdd gnd width_N width_P LAMBDA
 
-C_out G43 gnd 1fF 
+X_S0 P0 clk S_0 S0_bar vdd gnd width_N width_P LAMBDA DFF
+X_S1 S1 clk S_1 S1_bar vdd gnd width_N width_P LAMBDA DFF
+X_S2 S2 clk S_2 S2_bar vdd gnd width_N width_P LAMBDA DFF
+X_S3 S3 clk S_3 S3_bar vdd gnd width_N width_P LAMBDA DFF
+X_S4 S4 clk S_4 S4_bar vdd gnd width_N width_P LAMBDA DFF
+X_Co G43 clk C_Outm C_Outm_bar vdd gnd width_N width_P LAMBDA DFF
+
+MP0  S_0_inv  S_0 vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn0  S_0_inv  S_0 gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+
+MP1  S_1_inv  S_1 vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn1  S_1_inv  S_1 gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+
+MP2  S_2_inv  S_2 vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn2  S_2_inv  S_2 gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+MP3  S_3_inv  S_3 vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn3  S_3_inv  S_3 gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+MP4  S_4_inv  S_4 vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn4  S_4_inv  S_4 gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mout  out  C_Outm vdd vdd CMOSP W={20*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+MnuT  out  C_Outm gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+
+* .control
+* tran 0.1n 100n
+* plot v(clk)+10 v(S_0)+8 v(S_1)+6 v(S_2)+4 v(S_3)+2 v(S_4) v(C_Outm)-2
+* .endc
+
+.tran 0.1n 200n
+
+
+.measure tran t_s0    TRIG v(clk) VAL=0.9 RISE=1  TARG v(P0) VAL=0.9 RISE=1
+.measure tran t_s1    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S1) VAL=0.9 RISE=1
+.measure tran t_s2    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S2) VAL=0.9 RISE=1
+.measure tran t_s3    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S3) VAL=0.9 RISE=1
+.measure tran t_s4    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S4) VAL=0.9 RISE=1
+.measure tran t_cout  TRIG v(clk) VAL=0.9 RISE=1  TARG v(G43) VAL=0.9 RISE=1
 
 .control
-tran 0.1n 100n
-plot v(clk)+10 v(B0)+8 v(B1)+6 v(B3)+4 v(B3)+2 v(B4)
+  run
+  print t_s0 t_s1 t_s2 t_s3 t_s4 t_cout
 .endc
 
 
