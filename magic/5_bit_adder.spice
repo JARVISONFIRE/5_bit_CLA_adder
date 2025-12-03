@@ -1,0 +1,408 @@
+* SPICE3 file created from 5_bit_adder.ext - technology: scmos
+
+.option scale=90n
+
+M1000 a_199_329# P1 P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1001 a_60_n368# a_17_n385# a_60_n385# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1002 a_59_n82# a_22_n85# P1 w_46_n88# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1003 P1 P1 a_384_n104# w_371_n110# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1004 a_210_n630# A P1 w_196_n618# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1005 A a_210_n227# P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1006 P0_bar A P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1007 a_209_593# A P1 w_195_605# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1008 P1_bar A a_199_329# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1009 a_59_n99# a_22_n85# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1010 a_17_n277# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1011 a_98_n260# a_60_n260# P1 w_85_n266# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1012 a_209_181# A P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1013 a_199_329# P1 P1 w_185_341# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1014 P3 a_210_n630# a_200_n482# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1015 G4 a_384_n257# P1 w_413_n262# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1016 a_60_n277# a_23_n263# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1017 G4 a_384_n257# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1018 P0 A P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1019 a_97_n190# a_22_n193# a_97_n207# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1020 a_98_n385# a_60_n368# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1021 P0 A a_199_741# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1022 a_59_9# a_22_23# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1023 a_98_n476# a_23_n479# a_98_n493# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1024 a_59_n136# a_16_n153# a_59_n153# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1025 a_17_n476# D P1 w_4_n482# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1026 P1_bar A P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1027 a_97_n28# a_22_n31# a_97_n45# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1028 a_384_n121# A P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1029 A A a_200_n79# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1030 a_200_n79# P1 P1 w_186_n67# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1031 a_384_n155# P1 a_384_n172# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1032 a_200_n79# P1 P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1033 P3_bar a_210_n630# P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1034 a_60_n476# a_23_n479# P1 w_47_n482# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1035 G0 a_384_n53# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1036 P1 a_97_n190# P1 w_122_n195# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1037 P4_bar A P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1038 a_384_n206# A P1 w_371_n212# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1039 a_16_9# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1040 P0_bar A a_199_741# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1041 a_60_n314# a_17_n331# a_60_n331# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1042 P1 P1 a_384_n257# w_371_n263# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1043 P4_bar a_210_n1035# P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1044 P4_bar a_210_n1035# a_200_n887# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1045 a_209_593# A P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1046 a_97_n153# a_59_n136# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1047 a_59_n45# a_22_n31# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1048 a_210_n1035# P1 P1 w_196_n1023# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1049 P4_bar A a_200_n887# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1050 P1 a_98_n368# P1 w_123_n373# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1051 a_210_n1035# P1 P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1052 P1 a_98_n368# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1053 a_97_26# a_22_23# a_97_9# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1054 G3 a_384_n206# P1 w_413_n211# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1055 a_98_n331# a_60_n314# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1056 G3 a_384_n206# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1057 a_17_n422# D P1 w_4_n428# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1058 a_60_n260# a_17_n277# a_60_n277# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1059 a_16_26# D P1 w_3_20# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1060 a_384_n274# A P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1061 a_17_n493# a_23_n479# a_17_n476# w_4_n482# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1062 a_60_n422# a_23_n425# P1 w_47_n428# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1063 a_200_n482# P1 P1 w_186_n470# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1064 a_17_n439# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1065 A a_210_n227# a_200_n79# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1066 A a_97_n82# P1 w_122_n87# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1067 a_384_n104# P1 a_384_n121# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1068 A a_97_n136# P1 w_122_n141# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1069 P3 A a_200_n482# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1070 P1_bar a_209_181# P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1071 a_384_n53# A P1 w_371_n59# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1072 a_16_n190# D P1 w_3_n196# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1073 A a_97_n136# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1074 a_200_n482# P1 P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1075 A a_97_n82# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1076 P2_bar a_210_n227# P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1077 a_16_n28# D P1 w_3_n34# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1078 a_60_n439# a_23_n425# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1079 P1 P1 a_384_n206# w_371_n212# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1080 a_59_n190# a_22_n193# P1 w_46_n196# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1081 a_384_n70# A P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1082 a_98_n368# a_23_n371# a_98_n385# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1083 a_98_n277# a_60_n260# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1084 P1 a_98_n314# P1 w_123_n319# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1085 a_17_n368# D P1 w_4_n374# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1086 P1 a_209_181# a_199_329# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1087 P3_bar A P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1088 P1 a_98_n314# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1089 a_199_741# P1 P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1090 a_59_n82# a_16_n99# a_59_n99# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1091 G0 a_384_n53# P1 w_413_n58# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1092 a_60_n368# a_23_n371# P1 w_47_n374# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1093 a_16_n207# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1094 P3_bar A a_200_n482# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1095 a_17_n493# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1096 a_98_n476# a_60_n476# P1 w_85_n482# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1097 P0_bar a_209_593# P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1098 a_59_n207# a_22_n193# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1099 a_60_n493# a_23_n479# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1100 P1 a_209_181# P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1101 a_16_n82# D P1 w_3_n88# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1102 a_384_n223# A P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1103 a_97_n28# a_59_n28# P1 w_84_n34# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1104 a_17_n439# a_23_n425# a_17_n422# w_4_n428# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1105 a_199_741# P1 P1 w_185_753# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1106 a_97_n136# a_22_n139# a_97_n153# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1107 A a_97_n28# P1 w_122_n33# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1108 a_16_n136# D P1 w_3_n142# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1109 a_384_n257# P1 a_384_n274# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+** SOURCE/DRAIN TIED
+M1110 P1 a_98_n260# P1 w_123_n265# pfet w=8 l=2
++  ad=40p pd=26u as=3.28n ps=2.132m
+M1111 A a_97_n28# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1112 a_16_n99# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1113 P3 A P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1114 P1 a_98_n260# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1115 a_254_n1162# a_210_n1035# P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1116 P0 a_209_593# a_199_741# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1117 a_16_9# a_22_23# a_16_26# w_3_20# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1118 a_59_n136# a_22_n139# P1 w_46_n142# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1119 a_16_n207# a_22_n193# a_16_n190# w_3_n196# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1120 a_97_9# a_59_26# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1121 a_254_n1162# A P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1122 a_98_n314# a_23_n317# a_98_n331# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1123 a_60_n422# a_17_n439# a_60_n439# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1124 a_17_n314# D P1 w_4_n320# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1125 a_384_n155# A P1 w_371_n161# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1126 a_59_n28# a_16_n45# a_59_n45# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1127 a_97_n82# a_59_n82# P1 w_84_n88# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1128 a_17_n385# a_23_n371# a_17_n368# w_4_n374# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1129 a_60_n314# a_23_n317# P1 w_47_n320# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1130 P2_bar A P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1131 a_98_n422# a_60_n422# P1 w_85_n428# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1132 a_97_n99# a_59_n82# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1133 P2_bar A a_200_n79# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1134 a_59_26# a_16_9# a_59_9# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1135 a_98_n439# a_60_n422# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1136 a_59_n190# a_16_n207# a_59_n207# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1137 a_98_n260# a_23_n263# a_98_n277# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1138 a_97_26# a_59_26# P1 w_84_20# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1139 G2 a_384_n155# P1 w_413_n160# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1140 a_97_n190# a_59_n190# P1 w_84_n196# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1141 a_60_n476# a_17_n493# a_60_n493# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1142 a_17_n260# D P1 w_4_n266# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1143 P1 A P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1144 a_16_n45# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1145 a_384_n206# P1 a_384_n223# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1146 P0_bar a_209_593# a_199_741# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1147 G2 a_384_n155# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1148 P1 P1 a_384_n53# w_371_n59# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1149 P3_bar a_210_n630# a_200_n482# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1150 a_16_n153# a_22_n139# a_16_n136# w_3_n142# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1151 a_60_n260# a_23_n263# P1 w_47_n266# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1152 a_210_n630# A P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1153 a_17_n385# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1154 A A P1 Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1155 a_16_n45# a_22_n31# a_16_n28# w_3_n34# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1156 a_98_n368# a_60_n368# P1 w_85_n374# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1157 a_384_n53# P1 a_384_n70# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1158 a_60_n385# a_23_n371# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1159 a_384_n104# A P1 w_371_n110# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1160 a_97_n207# a_59_n190# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1161 a_200_n887# A P1 w_186_n875# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1162 P3 a_210_n630# P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1163 a_98_n493# a_60_n476# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1164 a_17_n331# a_23_n317# a_17_n314# w_4_n320# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1165 A a_97_26# P1 w_122_21# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1166 P1 P1 a_384_n155# w_371_n161# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1167 a_254_n1162# A a_200_n887# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1168 P1 a_98_n422# P1 w_123_n427# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1169 a_200_n887# A P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1170 P1_bar a_209_181# a_199_329# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1171 P1 a_98_n422# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1172 a_254_n1162# a_210_n1035# a_200_n887# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1173 A a_97_26# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1174 a_97_n45# a_59_n28# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1175 a_16_n153# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1176 a_97_n136# a_59_n136# P1 w_84_n142# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1177 a_16_n99# a_22_n85# a_16_n82# w_3_n88# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1178 P0 a_209_593# P1 P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1179 a_59_n28# a_22_n31# P1 w_46_n34# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1180 a_209_181# A P1 w_195_193# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1181 G1 a_384_n104# P1 w_413_n109# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1182 a_59_n153# a_22_n139# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1183 G1 a_384_n104# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1184 a_59_26# a_22_23# P1 w_46_20# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1185 a_17_n277# a_23_n263# a_17_n260# w_4_n266# pfet w=8 l=2
++  ad=40p pd=26u as=24p ps=14u
+M1186 a_17_n331# D P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1187 a_384_n172# A P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1188 A a_98_n476# P1 w_123_n481# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1189 a_98_n314# a_60_n314# P1 w_85_n320# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1190 P2_bar a_210_n227# a_200_n79# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1191 P1 a_97_n190# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1192 a_210_n227# A P1 w_196_n215# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1193 a_97_n82# a_22_n85# a_97_n99# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+M1194 A a_98_n476# P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1195 a_60_n331# a_23_n317# P1 Gnd nfet w=4 l=2
++  ad=12p pd=10u as=20p ps=18u
+M1196 a_210_n227# A P1 Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1197 P1 A a_199_329# P1 pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1198 a_384_n257# A P1 w_371_n263# pfet w=8 l=2
++  ad=24p pd=14u as=40p ps=26u
+M1199 a_98_n422# a_23_n425# a_98_n439# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=12p ps=10u
+C0 P1 A 9.66958f
+C1 A 0 25.80364f **FLOATING
+C2 P1 0 0.12862p **FLOATING

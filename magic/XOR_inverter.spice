@@ -1,0 +1,77 @@
+* SPICE3 file created from XOR_inverter.ext - technology: scmos
+
+.option scale=90n
+
+M1000 a_38_14# a_n6_141# a_n16_289# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1001 a_n6_141# a_n12_148# a_n13_141# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1002 a_n6_141# a_n12_148# a_n13_160# w_n20_153# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1003 a_38_14# a_35_6# a_31_14# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1004 a_38_124# a_n6_141# a_n16_289# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1005 a_n16_289# a_n22_296# a_n23_308# w_n30_301# pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1006 a_38_124# a_35_171# a_n16_289# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1007 a_n16_289# a_n22_296# a_n23_289# Gnd nfet w=4 l=2
++  ad=20p pd=18u as=20p ps=18u
+M1008 a_38_124# a_35_171# a_31_14# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1009 a_38_14# a_35_381# a_n16_289# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1010 a_38_124# a_n6_141# a_31_14# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1011 a_38_14# a_n6_141# a_31_14# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+C0 vdd a_35_6# 0
+C1 a_n16_289# a_38_124# 0.16495f
+C2 a_n23_289# a_n22_296# 0.0566f
+C3 a_31_14# a_38_14# 0.16495f
+C4 vdd a_35_171# 0.02525f
+C5 vdd a_35_381# 0.02513f
+C6 a_38_14# a_38_124# 0.0214f
+C7 a_n16_289# a_38_14# 0.16495f
+C8 a_n23_308# w_n30_301# 0.03739f
+C9 a_35_171# a_n6_141# 0
+C10 a_n13_160# w_n20_153# 0.03739f
+C11 w_n30_301# a_n22_296# 0.02111f
+C12 a_n23_308# a_n22_296# 0.00161f
+C13 a_n13_160# a_n6_141# 0.12435f
+C14 vdd a_n6_141# 0.05034f
+C15 w_n20_153# a_n6_141# 0.0101f
+C16 a_n16_289# a_n23_289# 0.0825f
+C17 a_n6_141# a_n13_141# 0.08311f
+C18 a_n13_160# a_n12_148# 0.00161f
+C19 w_n30_301# a_n16_289# 0.00936f
+C20 w_n20_153# a_n12_148# 0.02111f
+C21 vdd a_31_14# 0.04912f
+C22 a_n23_308# a_n16_289# 0.12374f
+C23 a_n12_148# a_n6_141# 0.0591f
+C24 vdd a_38_124# 0.23149f
+C25 vdd a_n16_289# 0.03707f
+C26 a_31_14# a_n6_141# 0.01992f
+C27 a_n16_289# a_n22_296# 0.0591f
+C28 a_n12_148# a_n13_141# 0.0566f
+C29 vdd a_38_14# 0.24097f
+C30 a_n16_289# a_n6_141# 0.02268f
+C31 a_31_14# a_38_124# 0.16495f
+C32 a_35_6# 0 0.1485f **FLOATING
+C33 a_n13_141# 0 0.09883f **FLOATING
+C34 a_31_14# 0 0.79625f **FLOATING
+C35 a_n13_160# 0 0.06948f **FLOATING
+C36 a_n12_148# 0 0.18851f **FLOATING
+C37 a_35_171# 0 0.43514f **FLOATING
+C38 a_38_124# 0 0.81983f **FLOATING
+C39 a_n23_289# 0 0.09883f **FLOATING
+C40 a_n23_308# 0 0.06948f **FLOATING
+C41 a_n22_296# 0 0.18851f **FLOATING
+C42 a_n6_141# 0 3.62595f **FLOATING
+C43 a_38_14# 0 4.7787f **FLOATING
+C44 a_n16_289# 0 0.88414f **FLOATING
+C45 a_35_381# 0 0.14762f **FLOATING
+C46 vdd 0 2.86428f **FLOATING
+C47 w_n20_153# 0 0.57753f **FLOATING
+C48 w_n30_301# 0 0.57753f **FLOATING
