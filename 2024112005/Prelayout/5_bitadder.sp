@@ -31,21 +31,21 @@ M1  A_inbar  A_in gnd gnd CMOSN W={width_N} L={2*LAMBDA}
 
 .ends
 
-VCLK clk 0 PULSE(0 1.8 0 10p 10p 5n 10n)
+VCLK clk 0 PULSE(0 1.8 0 10p 10p 1n 2n)
 
 * PRE A INPUTS
-VA0 preA0 0 PULSE(0 1.8  0n 10p 10p 20n 40n)
-VA1 preA1 0 PULSE(0 1.8 10n 10p 10p 20n 40n)
-VA2 preA2 0 PULSE(0 1.8 20n 10p 10p 20n 40n)
-VA3 preA3 0 PULSE(0 1.8 30n 10p 10p 20n 40n)
-VA4 preA4 0 PULSE(0 1.8 40n 10p 10p 20n 40n)
+VA0 preA0 0 PULSE(0 1.8  1n 10p 10p 40n 40n)
+VA1 preA1 0 PULSE(0 1.8  1n 10p 10p 40n 40n)
+VA2 preA2 0 PULSE(0 1.8  1n 10p 10p 40n 40n)
+VA3 preA3 0 PULSE(0 1.8  1n 10p 10p 40n 40n)
+VA4 preA4 0 PULSE(0 1.8  1n 10p 10p 40n 40n)
 
 * PRE B INPUTS
-VB0 preB0 0 PULSE(0 1.8  0n 10p 10p 30n 60n)
-VB1 preB1 0 PULSE(0 1.8 15n 10p 10p 30n 60n)
-VB2 preB2 0 PULSE(0 1.8 30n 10p 10p 30n 60n)
-VB3 preB3 0 PULSE(0 1.8 45n 10p 10p 30n 60n)
-VB4 preB4 0 PULSE(0 1.8 60n 10p 10p 30n 60n)
+VB0 preB0 0 PULSE(0 1.8 1n 10p 10p 40n 40n)
+VB1 preB1 0 PULSE(0 1.8 1n 10p 10p 40n 40n)
+VB2 preB2 0 PULSE(0 1.8 1n 10p 10p 40n 40n)
+VB3 preB3 0 PULSE(0 1.8 1n 10p 10p 40n 40n)
+VB4 preB4 0 PULSE(0 1.8 1n 10p 10p 40n 40n)
 
 
 X_A0 preA0 clk A0 A0_bar vdd gnd width_N width_P LAMBDA DFF
@@ -150,24 +150,24 @@ MnuT  out  C_Outm gnd gnd CMOSN W={10*LAMBDA} L={2*LAMBDA}
 
 * .control
 * tran 0.1n 100n
+* plot v(clk)+10 v(S_0)+8 v(S_1)+6 v(S_2)+4 v(S_3)+2 v(S_4) v(C_Outm)-2
 * .endc
-*  plot v(clk)+10 v(A0)+8 v(A1)+6 v(A2)+4 v(A3)+2 v(A4) 
-*  plot v(clk)+10 v(B0)+8 v(B1)+6 v(B2)+4 v(B3)+2 v(B4) 
-.tran 0.1n 200n
+
+.tran 0.1n 40n
 
 
-.measure tran t_s0    TRIG v(clk) VAL=0.9 RISE=1  TARG v(P0) VAL=0.9 RISE=1
-.measure tran t_s1    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S1) VAL=0.9 RISE=1
-.measure tran t_s2    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S2) VAL=0.9 RISE=1
-.measure tran t_s3    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S3) VAL=0.9 RISE=1
-.measure tran t_s4    TRIG v(clk) VAL=0.9 RISE=1  TARG v(S4) VAL=0.9 RISE=1
-.measure tran t_cout  TRIG v(clk) VAL=0.9 RISE=1  TARG v(G43) VAL=0.9 RISE=1
+.measure tran t_s0    TRIG v(clk) VAL=0.9 RISE=2  TARG v(P0) VAL=0.9 RISE=1 
+.measure tran t_s1    TRIG v(clk) VAL=0.9 RISE=2  TARG v(S1) VAL=0.9 RISE=1
+.measure tran t_s2    TRIG v(clk) VAL=0.9 RISE=2  TARG v(S2) VAL=0.9 RISE=1
+.measure tran t_s3    TRIG v(clk) VAL=0.9 RISE=2  TARG v(S3) VAL=0.9 RISE=1
+.measure tran t_s4    TRIG v(clk) VAL=0.9 RISE=2  TARG v(S4) VAL=0.9 RISE=1
+.measure tran t_cout  TRIG v(clk) VAL=0.9 RISE=2  TARG v(G43) VAL=0.9 RISE=1
 
 .control
   run
-plot v(clk)+10 v(A0)+8 v(A1)+6 v(A2)+4 v(A3)+2 v(A4)
-plot v(clk)+10 v(B0)+8 v(B1)+6 v(B2)+4 v(B3)+2 v(B4) 
-plot v(clk)+10 v(S_0)+8 v(S_1)+6 v(S_2)+4 v(S_3)+2 v(S_4) v(C_Outm)-2
+  print t_s0 t_s1 t_s2 t_s3 t_s4 t_cout
+
+  plot V(p0)+10 V(s1)+8 V(S2)+6 V(s3)+4 V(s4)+2 V(G43) v(clk)-2
 
 .endc
 

@@ -1,0 +1,47 @@
+.subckt DFF D clk Out Out_bar vdd gnd width_N width_P LAMBDA
+
+Mp0  A D vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mp1  B clk A vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mn2  B D gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mp3  C clk vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mn4  C B K gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn5  K clk gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mp6  Out_bar C vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mn7  Out_bar clk F gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mn8  F C gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mp9  Out Out_bar vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mn10  Out Out_bar gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+.ends DFF

@@ -1,0 +1,28 @@
+.subckt AND2 P1 P2 P_out vdd gnd width_N width_P LAMBDA
+
+Mp0  A1 P1 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mp1  A1 P2 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+
+Mp2  A1  P1 A2 gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mp3  A2  P2 gnd gnd CMOSN W={2*width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+Mpinv0  P_out  A1 vdd vdd CMOSP W={width_P} L={2*LAMBDA}
+ +AS={5*width_P*LAMBDA} PS={10*LAMBDA+2*width_P}
+ +AD={5*width_P*LAMBDA} PD={10*LAMBDA+2*width_P}
+
+Mpinv1  P_out  A1 gnd gnd CMOSN W={width_N} L={2*LAMBDA}
+ +AS={5*width_N*LAMBDA} PS={10*LAMBDA+2*width_N}
+ +AD={5*width_N*LAMBDA} PD={10*LAMBDA+2*width_N}
+
+.ends AND2

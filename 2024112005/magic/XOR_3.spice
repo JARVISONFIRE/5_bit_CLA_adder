@@ -1,0 +1,54 @@
+* SPICE3 file created from XOR_3.ext - technology: scmos
+
+.option scale=90n
+
+M1000 out_XOR_3 C_bar a_63_n348# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1001 a_63_n238# A_bar B Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1002 a_63_n348# A B_bar vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1003 a_63_n238# A B vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1004 a_63_n238# A B_bar Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1005 out_XOR_3 C_bar a_63_n238# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1006 a_63_n348# A_bar B_bar Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1007 a_63_n348# A B Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1008 a_63_n238# A_bar B_bar vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1009 out_XOR_3 C a_63_n238# vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1010 a_63_n348# A_bar B vdd pfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+M1011 out_XOR_3 C a_63_n348# Gnd nfet w=8 l=2
++  ad=40p pd=26u as=40p ps=26u
+C0 a_63_n348# B 0.16495f
+C1 vdd C 0.02517f
+C2 vdd A_bar 0.05034f
+C3 a_63_n238# out_XOR_3 0.16495f
+C4 a_63_n348# out_XOR_3 0.16495f
+C5 vdd B 0.04912f
+C6 a_63_n348# a_63_n238# 0.0214f
+C7 vdd C_bar 0.02517f
+C8 B_bar a_63_n238# 0.16495f
+C9 vdd out_XOR_3 0.24306f
+C10 B_bar a_63_n348# 0.16495f
+C11 vdd a_63_n238# 0.24993f
+C12 vdd a_63_n348# 0.2695f
+C13 vdd B_bar 0.03707f
+C14 vdd A 0.05042f
+C15 a_63_n238# B 0.16495f
+C16 A 0 0.67244f **FLOATING
+C17 C 0 0.29611f **FLOATING
+C18 A_bar 0 0.818f **FLOATING
+C19 B 0 0.79625f **FLOATING
+C20 C_bar 0 0.409f **FLOATING
+C21 out_XOR_3 0 0.7809f **FLOATING
+C22 a_63_n238# 0 1.06341f **FLOATING
+C23 a_63_n348# 0 5.15021f **FLOATING
+C24 B_bar 0 0.8083f **FLOATING
+C25 vdd 0 4.3175f **FLOATING

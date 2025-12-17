@@ -1,0 +1,60 @@
+magic
+tech scmos
+timestamp 1764691298
+<< nwell >>
+rect -10 11 22 31
+<< ntransistor >>
+rect 1 -4 3 4
+rect 9 -4 11 4
+<< ptransistor >>
+rect 1 17 3 25
+rect 9 17 11 25
+<< ndiffusion >>
+rect 0 -4 1 4
+rect 3 -4 4 4
+rect 8 -4 9 4
+rect 11 -4 12 4
+<< pdiffusion >>
+rect 0 17 1 25
+rect 3 17 4 25
+rect 8 17 9 25
+rect 11 17 12 25
+<< ndcontact >>
+rect -4 -4 0 4
+rect 4 -4 8 4
+rect 12 -4 16 4
+<< pdcontact >>
+rect -4 17 0 25
+rect 4 17 8 25
+rect 12 17 16 25
+<< polysilicon >>
+rect 1 25 3 29
+rect 9 25 11 29
+rect 1 7 3 17
+rect -9 5 3 7
+rect -9 4 -7 5
+rect 1 4 3 5
+rect 9 4 11 17
+rect 1 -8 3 -4
+rect 9 -8 11 -4
+<< polycontact >>
+rect 11 7 15 11
+rect -11 0 -7 4
+<< metal1 >>
+rect -10 32 22 36
+rect -4 25 0 32
+rect 12 25 16 32
+rect 4 10 8 17
+rect -16 7 8 10
+rect 15 7 19 11
+rect -4 4 0 7
+rect -16 0 -11 4
+rect 12 -9 16 -4
+rect -10 -13 22 -9
+<< labels >>
+rlabel metal1 -10 32 22 36 5 vdd
+rlabel metal1 -10 -13 22 -9 1 gnd
+rlabel metal1 11 7 19 11 1 P2
+rlabel metal1 -16 0 -7 4 3 P1
+rlabel metal1 -16 7 8 10 1 NAND_Out
+<< end >>
